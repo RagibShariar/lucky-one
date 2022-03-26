@@ -20,17 +20,19 @@ const Shop = () => {
     // console.log(product);
     const newCart = [...cart, product];
     setCart(newCart);
+    
   };
 
   // random item generate
   const showRandom = () => {
     const item = cart[Math.floor(Math.random() * cart.length)];
-    setRandomItem(item.name);
+    setRandomItem(item.name); 
     setCart([]);
   };
   // clear cart
   const clearCart = (product) => {
     setCart([]);
+    setRandomItem([]);
   };
 
   return (
@@ -40,14 +42,18 @@ const Shop = () => {
 
         <div>
           {cart.map((product) => (
-            <p className="cart-item" key={product.id}>
-              {' '}
-              {product.name}
-            </p>
+            <div className='cart-div' key={product.id}>
+                <img className='cart-img'  src={product.image}  alt="" />
+                <p className="cart-item" >
+                   {product.name} 
+             </p>
+            </div>
+            
+           
           ))}
         </div>
         <div>
-          <h2 className="random-item">{randomItem}</h2>
+          <h2 className="random-item">{randomItem} </h2>
         </div>
 
         <button onClick={() => showRandom(cart)} className="my-btn">
@@ -66,8 +72,9 @@ const Shop = () => {
             handleAddToCart={handleAddToCart}
           ></Product>
         ))}
-      </div>
+        
     </div>
+      </div>
   );
 };
 
