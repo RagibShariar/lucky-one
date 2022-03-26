@@ -23,7 +23,8 @@ const QuestionAnswer = () => {
         For parent-child communication, simply pass props. Use state to store
         the data your current page needs in your controller-view. Use props to
         pass data and event handlers down to your child components.These lists
-        should help guide you when working with data in your components. <br />
+        should help guide you when working with data in your components.
+        </p> <br />
         <strong>Props</strong>
         <ul>
           <li>are immutable</li>
@@ -41,7 +42,7 @@ const QuestionAnswer = () => {
           <li> should not be accessed from child components</li>
           <li> pass it down with props instead</li>
         </ul>
-      </p>
+      
     </div>
   );
 };
