@@ -1,7 +1,18 @@
+header{
+    text-align: center;
+}
 .header{
+    padding: 10px;
     margin: 10px;
     font-size: 40px;
-    text-decoration: underline;
     color: #A12E46;
     text-align: center;
+    border: 4px dashed #A12E46;
+    display: inline-block;
+}
+@media (max-width: 575.98px) {
+    .header{
+        font-size: 25px;
+        text-decoration: none;
+    }
 }

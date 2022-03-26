@@ -11,5 +11,39 @@
     /* border: 1px solid; */
 }
 .cart-container{
-    
+    background-color: pink;
+    padding: 20px;
+    text-align: left;
+}
+.my-btn{
+    margin: 10px;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    border: 1px dashed;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.my-btn:hover{
+    background-color: rgb(238, 102, 102);
+    color: white;
+}
+
+
+
+@media (max-width: 575.98px) {
+    .shop-container{
+        display: block;
+    }
+    .products-container{
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 0;
+    }
+    .cart-container{
+        margin-top: 100px;
+    }
 }
