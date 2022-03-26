@@ -11,7 +11,8 @@
     /* border: 1px solid; */
 }
 .cart-container{
-    background-color: pink;
+    border-right: 2px dashed;
+    /* background-color: pink; */
     padding: 20px;
     text-align: left;
 }
@@ -30,20 +31,37 @@
     background-color: rgb(238, 102, 102);
     color: white;
 }
+.cart-item{
+    color: #A12E46;
+    font-weight: 19px;
+    font-weight: 500;
+}
+.random-item{
+    border: 2px dashed;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 10px;
+}
 
 
 
 @media (max-width: 575.98px) {
     .shop-container{
         display: block;
+        order: 2;
     }
     .products-container{
         margin: 10px;
         display: grid;
         grid-template-columns: 1fr ;
         gap: 0;
+        border: 1px solid;
+        order: 2;
     }
     .cart-container{
+        border: 1px solid;
         margin-top: 100px;
+        display: block;
+        order: 1;
     }
 }

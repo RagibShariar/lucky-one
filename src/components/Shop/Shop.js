@@ -6,6 +6,7 @@ import Cart from '../Cart/Cart';
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [randomItem, setRandomItem] = useState([]);
 
   // load json data
   useEffect(() => {
@@ -19,11 +20,44 @@ const Shop = () => {
     // console.log(product);
     const newCart = [...cart, product];
     setCart(newCart);
-    // console.log(newCart);
+  };
+
+  // random item generate
+  const showRandom = () => {
+    const item = cart[Math.floor(Math.random() * cart.length)];
+    setRandomItem(item.name);
+    setCart([]);
+  };
+  // clear cart
+  const clearCart = (product) => {
+    setCart([]);
   };
 
   return (
     <div className="shop-container">
+      <div className="cart-container">
+        <h3>You've Selected: {cart.length} items</h3>
+
+        <div>
+          {cart.map((product) => (
+            <p className="cart-item" key={product.id}>
+              {' '}
+              {product.name}
+            </p>
+          ))}
+        </div>
+        <div>
+          <h2 className="random-item">{randomItem}</h2>
+        </div>
+
+        <button onClick={() => showRandom(cart)} className="my-btn">
+          Choose 1 For Me
+        </button>
+        <button onClick={() => clearCart(cart)} className="my-btn">
+          Choose Again
+        </button>
+      </div>
+
       <div className="products-container">
         {products.map((product) => (
           <Product
@@ -32,23 +66,6 @@ const Shop = () => {
             handleAddToCart={handleAddToCart}
           ></Product>
         ))}
-      </div>
-
-      <div className="cart-container">
-        <h3>You've Selected</h3>
-        <p>Selected: {cart.length}</p>
-        {/* <h5>gfrsf: {cart}</h5> */}
-        <div>
-          {cart.map(product =>
-            <h5 key={product.id}>{product.name}</h5>
-          )}
-          
-        </div>
-
-
-
-        <button className="my-btn">Choose 1 For Me</button>
-        <button className="my-btn">Choose Again</button>
       </div>
     </div>
   );
